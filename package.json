@@ -1,0 +1,15 @@
+{
+  "name": "util-functions",
+  "version": "1.0.0",
+  "description": "Util functions",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo test"
+  },
+  "author": "joaoduartepinto@outlook.com",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1092.0",
+    "handlebars": "^4.7.7"
+  }
+}

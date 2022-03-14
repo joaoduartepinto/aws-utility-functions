@@ -1,0 +1,27 @@
+org: joaopinto
+app: util-functions
+service: util-functions
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: eu-west-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "ses:SendEmail"
+        - "ses:SendRawEmail"
+      Resource:
+        - "*"
+  environment:
+    REGION: ${param:REGION}
+
+functions:
+  feed-olaf:
+    handler: /functions/feed-olaf.handler
+    events:
+      - schedule: ${param:SCHEDULE}
+    environment:
+      VERIFIED_EMAIL: ${param:VERIFIED_EMAIL}
